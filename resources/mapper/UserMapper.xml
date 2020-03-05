@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zx.dao.IUserDao">
+    <!-- query data with requirements -->
+    <select id="selectList" resultType="com.zx.pojo.User">
+        select id,name,age,sex from user limit #{page},#{limit};
+    </select>
+
+    <!-- get total number of query results -->
+    <select id="selectCount" resultType="int">
+        select count(1) from user
+    </select>
+
+</mapper>
